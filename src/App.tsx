@@ -144,7 +144,7 @@ export default function App() {
             <h2 className="text-lg font-semibold">Legenda</h2>
             <div className="space-y-1">
               <p><Badge variant="destructive">Czerwony</Badge> – słowo z ≥ 3 spółgłoskami</p>
-              <p><Badge variant="outline">Szary</Badge> – słowo z < 3 spółgłoskami</p>
+              <p><Badge variant="outline">Szary</Badge> – słowo z &lt; 3 spółgłoskami</p>
             </div>
           </CardContent>
         </Card>
