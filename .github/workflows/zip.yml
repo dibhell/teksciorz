@@ -1,0 +1,4 @@
+        - name: Extract ZIP
+  run: |
+    mkdir -p node_modules
+    unzip node_modules.zip -d project
