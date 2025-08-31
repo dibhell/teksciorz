@@ -5,10 +5,16 @@ import * as TooltipPrimitive from "@radix-ui/react-tooltip"
 
 import { cn } from "@/lib/utils"
 
+// Provider — musi być najwyżej w drzewie komponentów (np. w App.tsx)
 const TooltipProvider = TooltipPrimitive.Provider
 
+// Root tooltip element
 const Tooltip = TooltipPrimitive.Root
+
+// Trigger (element, na który najedziesz myszką)
 const TooltipTrigger = TooltipPrimitive.Trigger
+
+// Content (to, co pokazuje się w dymku)
 const TooltipContent = React.forwardRef<
   React.ElementRef<typeof TooltipPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>
@@ -17,7 +23,10 @@ const TooltipContent = React.forwardRef<
     ref={ref}
     sideOffset={sideOffset}
     className={cn(
-      "z-50 overflow-hidden rounded-md border bg-popover px-3 py-1.5 text-sm text-popover-foreground shadow-md animate-in fade-in-50 data-[state=closed]:animate-out data-[state=closed]:fade-out-50 data-[side=bottom]:slide-in-from-top-1 data-[side=left]:slide-in-from-right-1 data-[side=right]:slide-in-from-left-1 data-[side=top]:slide-in-from-bottom-1",
+      "z-50 overflow-hidden rounded-md border bg-popover px-3 py-1.5 text-sm text-popover-foreground shadow-md animate-in fade-in-50 " +
+      "data-[state=closed]:animate-out data-[state=closed]:fade-out-50 " +
+      "data-[side=bottom]:slide-in-from-top-1 data-[side=left]:slide-in-from-right-1 " +
+      "data-[side=right]:slide-in-from-left-1 data-[side=top]:slide-in-from-bottom-1",
       className
     )}
     {...props}
