@@ -49,3 +49,9 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+        - name: Extract ZIP
+  run: |
+    mkdir -p node_modules
+    unzip node_modules.zip -d project
+
