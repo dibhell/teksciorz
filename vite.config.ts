@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/NAZWA_REPO/',   // ← podmień na nazwę Twojego repo
+  base: '/teksciorz/',   // ← podmień na nazwę Twojego repo
 })
