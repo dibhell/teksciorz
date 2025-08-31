@@ -1,4 +1,22 @@
-        - name: Extract ZIP
-  run: |
-    mkdir -p node_modules
-    unzip node_modules.zip -d project
+- name: Checkout
+  uses: actions/checkout@v4
+
+- name: Install unzip
+  run: sudo apt-get update && sudo apt-get install -y unzip
+
+- name: Extract assets
+  if: hashFiles('node_modules.zip') != ''
+  run: unzip -o node_modules.zip -d ./node_modules
+  # LEPIEJ: usuń zip i po prostu
+  # run: npm ci
+
+- name: Setup Node
+  uses: actions/setup-node@v4
+  with:
+    node-version: 20
+
+- name: Install deps
+  run: npm install   # lub npm ci (jeśli masz package-lock.json)
+
+- name: Build
+  run: npm run build
